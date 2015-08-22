@@ -49,7 +49,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
         this.liquiBasePropertyResolver = new RelaxedPropertyResolver(env, "liquiBase.");
     }
 
-    @Bean(destroyMethod = "shutdown")
+    @Bean(destroyMethod = "close")
     @ConditionalOnExpression("#{!environment.acceptsProfiles('cloud') && !environment.acceptsProfiles('heroku')}")
     public DataSource dataSource(CacheManager cacheManager) {
         log.debug("Configuring Datasource");
