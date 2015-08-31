@@ -1,7 +1,7 @@
 {
-  "name": "jhipster",
+  "name": "samplehazelcast",
   "version": "0.0.0",
-  "description": "Description for jhipster",
+  "description": "Description for sampleHazelcast",
   "private": true,
   "dependencies": {
   },

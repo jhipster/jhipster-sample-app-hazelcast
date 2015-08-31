@@ -10,21 +10,21 @@ public class HeaderUtil {
  
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-jhipsterApp-alert", message);
-        headers.add("X-jhipsterApp-params", param);
+        headers.add("X-samplehazelcastApp-alert", message);
+        headers.add("X-samplehazelcastApp-params", param);
         return headers;
     }
     
     public static HttpHeaders createEntityCreationAlert(String entityName, String param) {
-        return createAlert("jhipsterApp." + entityName + ".created", param);
+        return createAlert("samplehazelcastApp." + entityName + ".created", param);
     }
 
     public static HttpHeaders createEntityUpdateAlert(String entityName, String param) {
-        return createAlert("jhipsterApp." + entityName + ".updated", param);
+        return createAlert("samplehazelcastApp." + entityName + ".updated", param);
     }
 
     public static HttpHeaders createEntityDeletionAlert(String entityName, String param) {
-        return createAlert("jhipsterApp." + entityName + ".deleted", param);
+        return createAlert("samplehazelcastApp." + entityName + ".deleted", param);
     }
 
 }

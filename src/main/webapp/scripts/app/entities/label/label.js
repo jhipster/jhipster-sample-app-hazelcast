@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('samplehazelcastApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('label', {
@@ -8,7 +8,7 @@ angular.module('jhipsterApp')
                 url: '/labels',
                 data: {
                     roles: ['ROLE_USER'],
-                    pageTitle: 'jhipsterApp.label.home.title'
+                    pageTitle: 'samplehazelcastApp.label.home.title'
                 },
                 views: {
                     'content@': {
@@ -29,7 +29,7 @@ angular.module('jhipsterApp')
                 url: '/label/{id}',
                 data: {
                     roles: ['ROLE_USER'],
-                    pageTitle: 'jhipsterApp.label.detail.title'
+                    pageTitle: 'samplehazelcastApp.label.detail.title'
                 },
                 views: {
                     'content@': {
