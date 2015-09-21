@@ -7,7 +7,7 @@ angular.module('samplehazelcastApp')
                 parent: 'entity',
                 url: '/operations',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'samplehazelcastApp.operation.home.title'
                 },
                 views: {
@@ -28,7 +28,7 @@ angular.module('samplehazelcastApp')
                 parent: 'entity',
                 url: '/operation/{id}',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'samplehazelcastApp.operation.detail.title'
                 },
                 views: {
@@ -51,7 +51,7 @@ angular.module('samplehazelcastApp')
                 parent: 'operation',
                 url: '/new',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
@@ -74,7 +74,7 @@ angular.module('samplehazelcastApp')
                 parent: 'operation',
                 url: '/{id}/edit',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({

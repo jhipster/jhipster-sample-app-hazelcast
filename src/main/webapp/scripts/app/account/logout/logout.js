@@ -7,7 +7,7 @@ angular.module('samplehazelcastApp')
                 parent: 'account',
                 url: '/logout',
                 data: {
-                    roles: []
+                    authorities: []
                 },
                 views: {
                     'content@': {

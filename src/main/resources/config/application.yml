@@ -24,6 +24,11 @@ mail:
     from: sampleHazelcast@localhost
 
 
+spring:
+    mvc:
+        favicon:
+            enabled: false
+
 swagger:
     title: sampleHazelcast API
     description: sampleHazelcast applications and beyond!

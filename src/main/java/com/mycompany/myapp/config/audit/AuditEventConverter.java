@@ -2,12 +2,12 @@ package com.mycompany.myapp.config.audit;
 
 import com.mycompany.myapp.domain.PersistentAuditEvent;
 import org.springframework.boot.actuate.audit.AuditEvent;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-@Configuration
+@Component
 public class AuditEventConverter {
 
     /**
@@ -78,8 +78,10 @@ public class AuditEventConverter {
                     WebAuthenticationDetails authenticationDetails = (WebAuthenticationDetails) object;
                     results.put("remoteAddress", authenticationDetails.getRemoteAddress());
                     results.put("sessionId", authenticationDetails.getSessionId());
-                } else {
+                } else if (object != null) {
                     results.put(key, object.toString());
+                } else {
+                    results.put(key, "null");
                 }
             }
         }

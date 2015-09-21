@@ -12,19 +12,17 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
-
 /**
  * A BankAccount.
  */
 @Entity
-@Table(name = "BANKACCOUNT")
+@Table(name = "BANK_ACCOUNT")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class BankAccount implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
 
     @NotNull        
     @Column(name = "name", nullable = false)

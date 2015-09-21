@@ -7,7 +7,7 @@ angular.module('samplehazelcastApp')
                 parent: 'site',
                 url: '/',
                 data: {
-                    roles: []
+                    authorities: []
                 },
                 views: {
                     'content@': {
