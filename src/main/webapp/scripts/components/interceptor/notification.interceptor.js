@@ -9,6 +9,6 @@ angular.module('samplehazelcastApp')
                     AlertService.success(alertKey, { param : response.headers('X-samplehazelcastApp-params')});
                 }
                 return response;
-            },
+            }
         };
     });
