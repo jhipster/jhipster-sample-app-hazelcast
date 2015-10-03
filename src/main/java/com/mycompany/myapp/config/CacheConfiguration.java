@@ -14,7 +14,6 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PreDestroy;
@@ -23,7 +22,6 @@ import javax.inject.Inject;
 @Configuration
 @EnableCaching
 @AutoConfigureAfter(value = {MetricsConfiguration.class, DatabaseConfiguration.class})
-@Profile("!" + Constants.SPRING_PROFILE_FAST)
 public class CacheConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
@@ -114,7 +112,7 @@ public class CacheConfiguration {
     private MapConfig initializeDomainMapConfig() {
         MapConfig mapConfig = new MapConfig();
 
-        mapConfig.setTimeToLiveSeconds(env.getProperty("cache.timeToLiveSeconds", Integer.class, 3600));
+        mapConfig.setTimeToLiveSeconds(env.getProperty("jhipster.cache.timeToLiveSeconds", Integer.class, 3600));
         return mapConfig;
     }
     
@@ -122,8 +120,8 @@ public class CacheConfiguration {
     private MapConfig initializeClusteredSession() {
         MapConfig mapConfig = new MapConfig();
 
-        mapConfig.setBackupCount(env.getProperty("cache.hazelcast.backupCount", Integer.class, 1));
-        mapConfig.setTimeToLiveSeconds(env.getProperty("cache.timeToLiveSeconds", Integer.class, 3600));
+        mapConfig.setBackupCount(env.getProperty("jhipster.cache.hazelcast.backupCount", Integer.class, 1));
+        mapConfig.setTimeToLiveSeconds(env.getProperty("jhipster.cache.timeToLiveSeconds", Integer.class, 3600));
         return mapConfig;
     }
 
