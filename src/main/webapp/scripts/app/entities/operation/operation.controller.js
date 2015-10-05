@@ -45,6 +45,11 @@ angular.module('samplehazelcastApp')
         };
 
         $scope.clear = function () {
-            $scope.operation = {date: null, description: null, amount: null, id: null};
+            $scope.operation = {
+                date: null,
+                description: null,
+                amount: null,
+                id: null
+            };
         };
     });
