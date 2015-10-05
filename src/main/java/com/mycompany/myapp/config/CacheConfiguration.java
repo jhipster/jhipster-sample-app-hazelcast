@@ -14,6 +14,8 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+import org.springframework.context.annotation.Profile;
 
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
@@ -46,7 +48,7 @@ public class CacheConfiguration {
     }
 
     @Bean
-    public HazelcastInstance hazelcastInstance() {
+    public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
         log.debug("Configuring Hazelcast");
         Config config = new Config();
         config.setInstanceName("sampleHazelcast");
@@ -62,8 +64,8 @@ public class CacheConfiguration {
         }
         
         config.getMapConfigs().put("default", initializeDefaultMapConfig());
-        config.getMapConfigs().put("com.mycompany.myapp.domain.*", initializeDomainMapConfig());
-        config.getMapConfigs().put("my-sessions", initializeClusteredSession());
+        config.getMapConfigs().put("com.mycompany.myapp.domain.*", initializeDomainMapConfig(jHipsterProperties));
+        config.getMapConfigs().put("my-sessions", initializeClusteredSession(jHipsterProperties));
 
         hazelcastInstance = HazelcastInstanceFactory.newHazelcastInstance(config);
 
@@ -108,19 +110,19 @@ public class CacheConfiguration {
         return mapConfig;
     }
 
-    private MapConfig initializeDomainMapConfig() {
+    private MapConfig initializeDomainMapConfig(JHipsterProperties jHipsterProperties) {
         MapConfig mapConfig = new MapConfig();
 
-        mapConfig.setTimeToLiveSeconds(env.getProperty("jhipster.cache.timeToLiveSeconds", Integer.class, 3600));
+        mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getTimeToLiveSeconds());
         return mapConfig;
     }
     
 
-    private MapConfig initializeClusteredSession() {
+    private MapConfig initializeClusteredSession(JHipsterProperties jHipsterProperties) {
         MapConfig mapConfig = new MapConfig();
 
-        mapConfig.setBackupCount(env.getProperty("jhipster.cache.hazelcast.backupCount", Integer.class, 1));
-        mapConfig.setTimeToLiveSeconds(env.getProperty("jhipster.cache.timeToLiveSeconds", Integer.class, 3600));
+        mapConfig.setBackupCount(jHipsterProperties.getCache().getHazelcast().getBackupCount());
+        mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getTimeToLiveSeconds());
         return mapConfig;
     }
 

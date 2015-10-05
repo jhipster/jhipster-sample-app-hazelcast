@@ -174,8 +174,8 @@ public class JHipsterProperties {
     public static class Cache {
 
         private int timeToLiveSeconds = 3600;
+        private final Hazelcast hazelcast = new Hazelcast();
 
-        private final Ehcache ehcache = new Ehcache();
 
         public int getTimeToLiveSeconds() {
             return timeToLiveSeconds;
@@ -184,21 +184,20 @@ public class JHipsterProperties {
         public void setTimeToLiveSeconds(int timeToLiveSeconds) {
             this.timeToLiveSeconds = timeToLiveSeconds;
         }
-
-        public Ehcache getEhcache() {
-            return ehcache;
+        public Hazelcast getHazelcast() {
+            return hazelcast;
         }
 
-        public static class Ehcache {
+        public static class Hazelcast {
 
-            private String maxBytesLocalHeap = "16M";
+            private int backupCount = 1;
 
-            public String getMaxBytesLocalHeap() {
-                return maxBytesLocalHeap;
+            public int getBackupCount() {
+                return backupCount;
             }
 
-            public void setMaxBytesLocalHeap(String maxBytesLocalHeap) {
-                this.maxBytesLocalHeap = maxBytesLocalHeap;
+            public void setBackupCount(int backupCount) {
+                this.backupCount = backupCount;
             }
         }
     }
@@ -226,7 +225,7 @@ public class JHipsterProperties {
         }
 
         public void setHost(String host) {
-            this.host = host;
+                this.host = host;
         }
 
         public int getPort() {

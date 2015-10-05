@@ -51,8 +51,6 @@ jhipster:
     cache: # Hibernate 2nd level cache, used by CacheConfiguration
         timeToLiveSeconds: 3600
         hazelcast:
-            debug: true
-            stickySession: false
             backupCount: 1
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
