@@ -1,6 +1,6 @@
 jhipster-prod-mysql:
   container_name: sampleHazelcast-prod-mysql
-  image : mysql
+  image: mysql
   # volumes:
   # - ~/volumes/jhipster/sampleHazelcast/prod-mysql/:/var/lib/mysql/
   environment:
