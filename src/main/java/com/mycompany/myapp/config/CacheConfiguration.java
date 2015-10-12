@@ -20,7 +20,7 @@ import javax.inject.Inject;
 
 @Configuration
 @EnableCaching
-@AutoConfigureAfter(value = {MetricsConfiguration.class, DatabaseConfiguration.class})
+@AutoConfigureAfter(value = { MetricsConfiguration.class, DatabaseConfiguration.class })
 public class CacheConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
