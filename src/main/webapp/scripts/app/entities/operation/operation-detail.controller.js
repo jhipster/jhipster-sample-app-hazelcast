@@ -8,7 +8,9 @@ angular.module('samplehazelcastApp')
                 $scope.operation = result;
             });
         };
-        $rootScope.$on('samplehazelcastApp:operationUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('samplehazelcastApp:operationUpdate', function(event, result) {
             $scope.operation = result;
         });
+        $scope.$on('$destroy', unsubscribe);
+
     });

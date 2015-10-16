@@ -8,7 +8,9 @@ angular.module('samplehazelcastApp')
                 $scope.bankAccount = result;
             });
         };
-        $rootScope.$on('samplehazelcastApp:bankAccountUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('samplehazelcastApp:bankAccountUpdate', function(event, result) {
             $scope.bankAccount = result;
         });
+        $scope.$on('$destroy', unsubscribe);
+
     });
