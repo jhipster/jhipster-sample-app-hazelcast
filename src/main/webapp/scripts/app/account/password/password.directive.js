@@ -1,7 +1,7 @@
 /* globals $ */
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .directive('passwordStrengthBar', function () {
         return {
             replace: true,

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('ResetFinishController', function ($scope, $stateParams, $timeout, Auth) {
 
         $scope.keyMissing = $stateParams.key === undefined;

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .service('DateUtils', function ($filter) {
       this.convertLocaleDateToServer = function(date) {
         if (date) {

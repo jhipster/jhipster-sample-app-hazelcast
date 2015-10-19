@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .directive('jhAlert', function(AlertService) {
 		return {
             restrict: 'E',
@@ -27,7 +27,7 @@ angular.module('samplehazelcastApp')
 	            function($scope) {
 	                $scope.alerts = AlertService.get();
 
-					var cleanHttpErrorListener = $rootScope.$on('samplehazelcastApp.httpError', function (event, httpResponse) {
+					var cleanHttpErrorListener = $rootScope.$on('sampleHazelcastApp.httpError', function (event, httpResponse) {
 					    var i;
 					    event.stopPropagation();
 					    switch (httpResponse.status) {
@@ -42,7 +42,7 @@ angular.module('samplehazelcastApp')
 					                    var fieldError = httpResponse.data.fieldErrors[i];
 					                    // convert 'something[14].other[4].id' to 'something[].other[].id' so translations can be written to it
 					                    var convertedField = fieldError.field.replace(/\[\d*\]/g, "[]");
-					                    var fieldName = $translate.instant('samplehazelcastApp.' + fieldError.objectName + '.' + convertedField);
+					                    var fieldName = $translate.instant('sampleHazelcastApp.' + fieldError.objectName + '.' + convertedField);
 					                    addErrorAlert('Field ' + fieldName + ' cannot be empty', 'error.' + fieldError.message, {fieldName: fieldName});
 					                }
 					            } else if (httpResponse.data && httpResponse.data.message) {

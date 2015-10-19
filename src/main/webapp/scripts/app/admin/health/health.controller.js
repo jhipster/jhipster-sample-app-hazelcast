@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('HealthController', function ($scope, MonitoringService, $modal) {
         $scope.updatingHealth = true;
         $scope.separator = '.';

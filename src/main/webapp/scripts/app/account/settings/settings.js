@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('settings', {

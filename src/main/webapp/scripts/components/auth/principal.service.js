@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .factory('Principal', function Principal($q, Account) {
         var _identity,
             _authenticated = false;

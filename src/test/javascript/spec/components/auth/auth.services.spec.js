@@ -2,8 +2,6 @@
 
 describe('Services Tests ', function () {
 
-    beforeEach(module('samplehazelcastApp'));
-
     describe('Auth', function () {
         var $httpBackend, spiedLocalStorageService, authService, spiedAuthServerProvider;
 

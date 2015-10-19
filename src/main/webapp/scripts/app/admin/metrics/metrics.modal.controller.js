@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('MetricsModalController', function($scope, $modalInstance, threadDump) {
 
         $scope.threadDump = threadDump;

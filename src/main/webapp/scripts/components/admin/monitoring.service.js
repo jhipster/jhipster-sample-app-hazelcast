@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .factory('MonitoringService', function ($rootScope, $http) {
         return {
             getMetrics: function () {

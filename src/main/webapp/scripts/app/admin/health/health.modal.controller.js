@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('HealthModalController', function($scope, $modalInstance, currentHealth, baseName, subSystemName) {
 
         $scope.currentHealth = currentHealth;

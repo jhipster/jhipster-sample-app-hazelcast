@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('OperationDetailController', function ($scope, $rootScope, $stateParams, entity, Operation, BankAccount, Label) {
         $scope.operation = entity;
         $scope.load = function (id) {
@@ -8,7 +8,7 @@ angular.module('samplehazelcastApp')
                 $scope.operation = result;
             });
         };
-        var unsubscribe = $rootScope.$on('samplehazelcastApp:operationUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('sampleHazelcastApp:operationUpdate', function(event, result) {
             $scope.operation = result;
         });
         $scope.$on('$destroy', unsubscribe);

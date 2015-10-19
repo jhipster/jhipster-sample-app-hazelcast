@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .factory('AlertService', function ($timeout, $sce,$translate) {
         var exports = {
             factory: factory,

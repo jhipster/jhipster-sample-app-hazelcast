@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('bankAccount', {
@@ -8,7 +8,7 @@ angular.module('samplehazelcastApp')
                 url: '/bankAccounts',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: 'samplehazelcastApp.bankAccount.home.title'
+                    pageTitle: 'sampleHazelcastApp.bankAccount.home.title'
                 },
                 views: {
                     'content@': {
@@ -29,7 +29,7 @@ angular.module('samplehazelcastApp')
                 url: '/bankAccount/{id}',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: 'samplehazelcastApp.bankAccount.detail.title'
+                    pageTitle: 'sampleHazelcastApp.bankAccount.detail.title'
                 },
                 views: {
                     'content@': {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .factory('Label', function ($resource, DateUtils) {
         return $resource('api/labels/:id', {}, {
             'query': { method: 'GET', isArray: true},

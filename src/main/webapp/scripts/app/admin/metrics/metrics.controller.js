@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('MetricsController', function ($scope, MonitoringService, $modal) {
         $scope.metrics = {};
         $scope.updatingMetrics = true;

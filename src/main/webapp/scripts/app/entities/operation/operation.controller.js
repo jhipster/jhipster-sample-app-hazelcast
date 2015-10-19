@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('OperationController', function ($scope, Operation, ParseLinks) {
         $scope.operations = [];
         $scope.page = 0;

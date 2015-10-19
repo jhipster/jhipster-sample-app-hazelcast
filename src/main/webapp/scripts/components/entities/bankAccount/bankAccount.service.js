@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .factory('BankAccount', function ($resource, DateUtils) {
         return $resource('api/bankAccounts/:id', {}, {
             'query': { method: 'GET', isArray: true},

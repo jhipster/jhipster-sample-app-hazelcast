@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .directive('hasAnyAuthority', ['Principal', function (Principal) {
         return {
             restrict: 'A',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp').controller('LabelDialogController',
+angular.module('sampleHazelcastApp').controller('LabelDialogController',
     ['$scope', '$stateParams', '$modalInstance', 'entity', 'Label', 'Operation',
         function($scope, $stateParams, $modalInstance, entity, Label, Operation) {
 
@@ -13,7 +13,7 @@ angular.module('samplehazelcastApp').controller('LabelDialogController',
         };
 
         var onSaveFinished = function (result) {
-            $scope.$emit('samplehazelcastApp:labelUpdate', result);
+            $scope.$emit('sampleHazelcastApp:labelUpdate', result);
             $modalInstance.close(result);
         };
 

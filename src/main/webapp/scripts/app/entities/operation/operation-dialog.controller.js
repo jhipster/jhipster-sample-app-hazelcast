@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp').controller('OperationDialogController',
+angular.module('sampleHazelcastApp').controller('OperationDialogController',
     ['$scope', '$stateParams', '$modalInstance', 'entity', 'Operation', 'BankAccount', 'Label',
         function($scope, $stateParams, $modalInstance, entity, Operation, BankAccount, Label) {
 
@@ -14,7 +14,7 @@ angular.module('samplehazelcastApp').controller('OperationDialogController',
         };
 
         var onSaveFinished = function (result) {
-            $scope.$emit('samplehazelcastApp:operationUpdate', result);
+            $scope.$emit('sampleHazelcastApp:operationUpdate', result);
             $modalInstance.close(result);
         };
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('samplehazelcastApp')
+angular.module('sampleHazelcastApp')
     .controller('BankAccountController', function ($scope, BankAccount) {
         $scope.bankAccounts = [];
         $scope.loadAll = function() {
