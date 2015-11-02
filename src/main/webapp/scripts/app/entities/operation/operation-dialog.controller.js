@@ -13,16 +13,22 @@ angular.module('sampleHazelcastApp').controller('OperationDialogController',
             });
         };
 
-        var onSaveFinished = function (result) {
+        var onSaveSuccess = function (result) {
             $scope.$emit('sampleHazelcastApp:operationUpdate', result);
             $modalInstance.close(result);
+            $scope.isSaving = false;
+        };
+
+        var onSaveError = function (result) {
+            $scope.isSaving = false;
         };
 
         $scope.save = function () {
+            $scope.isSaving = true;
             if ($scope.operation.id != null) {
-                Operation.update($scope.operation, onSaveFinished);
+                Operation.update($scope.operation, onSaveSuccess, onSaveError);
             } else {
-                Operation.save($scope.operation, onSaveFinished);
+                Operation.save($scope.operation, onSaveSuccess, onSaveError);
             }
         };
 
