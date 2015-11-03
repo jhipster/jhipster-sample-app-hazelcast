@@ -20,6 +20,7 @@ angular.module('sampleHazelcastApp')
                 "en": "English",
                 "es": "Español",
                 "fr": "Français",
+                "gl": "Galego",
                 "hu": "Magyar",
                 "it": "Italiano",
                 "ja": "日本語",
