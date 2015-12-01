@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('sampleHazelcastApp').controller('OperationDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Operation', 'BankAccount', 'Label',
-        function($scope, $stateParams, $modalInstance, entity, Operation, BankAccount, Label) {
+    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Operation', 'BankAccount', 'Label',
+        function($scope, $stateParams, $uibModalInstance, entity, Operation, BankAccount, Label) {
 
         $scope.operation = entity;
         $scope.bankaccounts = BankAccount.query();
@@ -15,7 +15,7 @@ angular.module('sampleHazelcastApp').controller('OperationDialogController',
 
         var onSaveSuccess = function (result) {
             $scope.$emit('sampleHazelcastApp:operationUpdate', result);
-            $modalInstance.close(result);
+            $uibModalInstance.close(result);
             $scope.isSaving = false;
         };
 
@@ -33,6 +33,6 @@ angular.module('sampleHazelcastApp').controller('OperationDialogController',
         };
 
         $scope.clear = function() {
-            $modalInstance.dismiss('cancel');
+            $uibModalInstance.dismiss('cancel');
         };
 }]);

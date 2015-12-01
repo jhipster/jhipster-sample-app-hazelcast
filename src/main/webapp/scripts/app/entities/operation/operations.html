@@ -14,12 +14,12 @@
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th translate="global.field.id">ID</th>
-                    <th translate="sampleHazelcastApp.operation.date">Date</th>
-                    <th translate="sampleHazelcastApp.operation.description">Description</th>
-                    <th translate="sampleHazelcastApp.operation.amount">Amount</th>
-                    <th translate="sampleHazelcastApp.operation.bankAccount">bankAccount</th>
+                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span translate="sampleHazelcastApp.operation.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span translate="sampleHazelcastApp.operation.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="amount"><span translate="sampleHazelcastApp.operation.amount">Amount</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bankAccount.name"><span translate="sampleHazelcastApp.operation.bankAccount">bankAccount</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
