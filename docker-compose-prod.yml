@@ -1,13 +1,12 @@
-jhipster-prod-mysql:
-  container_name: sampleHazelcast-prod-mysql
+samplehazelcast-mysql:
+  container_name: samplehazelcast-mysql
   image: mysql:5.7.9
   # volumes:
-  # - ~/volumes/jhipster/sampleHazelcast/prod-mysql/:/var/lib/mysql/
+  #   - ~/volumes/jhipster/sampleHazelcast/mysql/:/var/lib/mysql/
   environment:
-  - MYSQL_USER=root
-  - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-  - MYSQL_DATABASE=samplehazelcast
+    - MYSQL_USER=root
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    - MYSQL_DATABASE=samplehazelcast
   ports:
-  - "3306:3306"
+    - "3306:3306"
   command: mysqld --lower_case_table_names=1
-
