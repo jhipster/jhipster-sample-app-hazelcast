@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .controller('MainController', function ($scope, Principal) {
         Principal.identity().then(function(account) {
             $scope.account = account;

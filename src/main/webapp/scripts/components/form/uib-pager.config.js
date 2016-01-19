@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .config(function (uibPagerConfig) {
         uibPagerConfig.itemsPerPage = 20;
         uibPagerConfig.previousText = '«';

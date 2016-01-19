@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('label', {
@@ -8,7 +8,7 @@ angular.module('sampleHazelcastApp')
                 url: '/labels',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: 'sampleHazelcastApp.label.home.title'
+                    pageTitle: 'samplehazelcastApp.label.home.title'
                 },
                 views: {
                     'content@': {
@@ -29,7 +29,7 @@ angular.module('sampleHazelcastApp')
                 url: '/label/{id}',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: 'sampleHazelcastApp.label.detail.title'
+                    pageTitle: 'samplehazelcastApp.label.detail.title'
                 },
                 views: {
                     'content@': {

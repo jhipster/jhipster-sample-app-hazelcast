@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp').controller('BankAccountDialogController',
+angular.module('samplehazelcastApp').controller('BankAccountDialogController',
     ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'BankAccount', 'User', 'Operation',
         function($scope, $stateParams, $uibModalInstance, entity, BankAccount, User, Operation) {
 
@@ -14,7 +14,7 @@ angular.module('sampleHazelcastApp').controller('BankAccountDialogController',
         };
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleHazelcastApp:bankAccountUpdate', result);
+            $scope.$emit('samplehazelcastApp:bankAccountUpdate', result);
             $uibModalInstance.close(result);
             $scope.isSaving = false;
         };

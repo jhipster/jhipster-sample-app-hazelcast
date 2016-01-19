@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .factory('AuditsService', function ($http) {
         return {
             findAll: function () {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .service('ParseLinks', function () {
         this.parse = function (header) {
             if (header.length == 0) {

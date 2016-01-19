@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .factory('errorHandlerInterceptor', function ($q, $rootScope) {
         return {
             'responseError': function (response) {
                 if (!(response.status == 401 && response.data.path.indexOf("/api/account") == 0 )){
-	                $rootScope.$emit('sampleHazelcastApp.httpError', response);
+	                $rootScope.$emit('samplehazelcastApp.httpError', response);
 	            }
                 return $q.reject(response);
             }

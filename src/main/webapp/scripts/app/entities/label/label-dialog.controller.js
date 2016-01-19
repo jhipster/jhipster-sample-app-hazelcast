@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp').controller('LabelDialogController',
+angular.module('samplehazelcastApp').controller('LabelDialogController',
     ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Label', 'Operation',
         function($scope, $stateParams, $uibModalInstance, entity, Label, Operation) {
 
@@ -13,7 +13,7 @@ angular.module('sampleHazelcastApp').controller('LabelDialogController',
         };
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleHazelcastApp:labelUpdate', result);
+            $scope.$emit('samplehazelcastApp:labelUpdate', result);
             $uibModalInstance.close(result);
             $scope.isSaving = false;
         };

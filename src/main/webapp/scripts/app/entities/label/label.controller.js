@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .controller('LabelController', function ($scope, $state, Label) {
 
         $scope.labels = [];

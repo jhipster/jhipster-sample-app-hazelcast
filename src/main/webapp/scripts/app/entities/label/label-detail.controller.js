@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp')
+angular.module('samplehazelcastApp')
     .controller('LabelDetailController', function ($scope, $rootScope, $stateParams, entity, Label, Operation) {
         $scope.label = entity;
         $scope.load = function (id) {
@@ -8,7 +8,7 @@ angular.module('sampleHazelcastApp')
                 $scope.label = result;
             });
         };
-        var unsubscribe = $rootScope.$on('sampleHazelcastApp:labelUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('samplehazelcastApp:labelUpdate', function(event, result) {
             $scope.label = result;
         });
         $scope.$on('$destroy', unsubscribe);

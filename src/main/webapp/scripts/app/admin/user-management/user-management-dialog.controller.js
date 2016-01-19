@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleHazelcastApp').controller('UserManagementDialogController',
+angular.module('samplehazelcastApp').controller('UserManagementDialogController',
     ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'User', 'Language',
         function($scope, $stateParams, $uibModalInstance, entity, User, Language) {
 

@@ -1,4 +1,4 @@
-beforeEach(module('sampleHazelcastApp'));
+beforeEach(module('samplehazelcastApp'));
 /**
  * returns a function whose angular will be replaced
  * with whatever mock was supplied.
