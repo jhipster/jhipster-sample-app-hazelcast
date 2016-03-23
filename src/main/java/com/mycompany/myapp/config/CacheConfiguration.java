@@ -52,6 +52,7 @@ public class CacheConfiguration {
         log.debug("Configuring Hazelcast");
         Config config = new Config();
         config.setInstanceName("sampleHazelcast");
+
         config.getNetworkConfig().setPort(5701);
         config.getNetworkConfig().setPortAutoIncrement(true);
 
@@ -63,6 +64,7 @@ public class CacheConfiguration {
             config.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
             config.getNetworkConfig().getJoin().getTcpIpConfig().setEnabled(false);
         }
+        
         
         config.getMapConfigs().put("default", initializeDefaultMapConfig());
         config.getMapConfigs().put("com.mycompany.myapp.domain.*", initializeDomainMapConfig(jHipsterProperties));

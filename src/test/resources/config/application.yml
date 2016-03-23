@@ -12,7 +12,6 @@
 
 spring:
     datasource:
-        driver-class-name: org.h2.jdbcx.JdbcDataSource
         url: jdbc:h2:mem:sampleHazelcast;DB_CLOSE_DELAY=-1
         name:
         username:
@@ -59,9 +58,9 @@ jhipster:
         maxPoolSize: 50
         queueCapacity: 10000
     security:
-        rememberme:
+        rememberMe:
             # security key (this key should be unique for your application, and kept secret)
-            key: e5918ac523e6cc8a1fb613126b82817cafa59776
+            key: f0186c13d2417f4fa9532017dc5e02300d6c232d
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:
@@ -69,6 +68,8 @@ jhipster:
         description: sampleHazelcast API documentation
         version: 0.0.1
         termsOfServiceUrl:
-        contact:
+        contactName:
+        contactUrl:
+        contactEmail:
         license:
         licenseUrl:

@@ -1,5 +1,5 @@
 {
-    "samplehazelcastApp": {
+    "sampleHazelcastApp": {
         "bankAccount" : {
             "home": {
                 "title": "BankAccounts",
