@@ -20,6 +20,7 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
+@SuppressWarnings("unused")
 @Configuration
 @EnableCaching
 @AutoConfigureAfter(value = { MetricsConfiguration.class, DatabaseConfiguration.class })
