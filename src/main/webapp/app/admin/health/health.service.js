@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('JhiHealthService', JhiHealthService);
 
     JhiHealthService.$inject = ['$rootScope', '$http'];

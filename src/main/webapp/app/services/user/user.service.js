@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('User', User);
 
     User.$inject = ['$resource'];

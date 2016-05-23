@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('translationStorageProvider', translationStorageProvider);
 
     translationStorageProvider.$inject = ['$cookies', '$log', 'LANGUAGES'];

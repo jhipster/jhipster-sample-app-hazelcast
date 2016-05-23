@@ -1,26 +1,26 @@
 
 <div>
-    <h2><span translate="sampleHazelcastApp.operation.detail.title">Operation</span> {{vm.operation.id}}</h2>
+    <h2><span translate="jhipsterHazelcastSampleApplicationApp.operation.detail.title">Operation</span> {{vm.operation.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span translate="sampleHazelcastApp.operation.date">Date</span></dt>
+        <dt><span translate="jhipsterHazelcastSampleApplicationApp.operation.date">Date</span></dt>
         <dd>
             <span>{{vm.operation.date | date:'medium'}}</span>
         </dd>
-        <dt><span translate="sampleHazelcastApp.operation.description">Description</span></dt>
+        <dt><span translate="jhipsterHazelcastSampleApplicationApp.operation.description">Description</span></dt>
         <dd>
             <span>{{vm.operation.description}}</span>
         </dd>
-        <dt><span translate="sampleHazelcastApp.operation.amount">Amount</span></dt>
+        <dt><span translate="jhipsterHazelcastSampleApplicationApp.operation.amount">Amount</span></dt>
         <dd>
             <span>{{vm.operation.amount}}</span>
         </dd>
-        <dt><span translate="sampleHazelcastApp.operation.bankAccount">Bank Account</span></dt>
+        <dt><span translate="jhipsterHazelcastSampleApplicationApp.operation.bankAccount">Bank Account</span></dt>
         <dd>
             <a ui-sref="bank-account-detail({id:vm.operation.bankAccount.id})">{{vm.operation.bankAccount.name}}</a>
         </dd>
-        <dt><span translate="sampleHazelcastApp.operation.label">Label</span></dt>
+        <dt><span translate="jhipsterHazelcastSampleApplicationApp.operation.label">Label</span></dt>
         <dd>
             <span ng-repeat="label in vm.operation.labels">
                 <a ui-sref="label-detail({id: {{label.id}}})">{{label.label}}</a>{{$last ? '' : ', '}}

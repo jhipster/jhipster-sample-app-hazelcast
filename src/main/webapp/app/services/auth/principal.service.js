@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('Principal', Principal);
 
     Principal.$inject = ['$q', 'Account'];

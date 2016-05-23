@@ -14,6 +14,6 @@
     };
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .component('jhiItemCount', jhiItemCount);
 })();

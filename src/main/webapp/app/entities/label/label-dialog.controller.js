@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .controller('LabelDialogController', LabelDialogController);
 
     LabelDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Label', 'Operation'];
@@ -17,7 +17,7 @@
         });
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleHazelcastApp:labelUpdate', result);
+            $scope.$emit('jhipsterHazelcastSampleApplicationApp:labelUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         };

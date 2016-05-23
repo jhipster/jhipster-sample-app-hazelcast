@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .controller('OperationController', OperationController);
 
     OperationController.$inject = ['$scope', '$state', 'Operation', 'ParseLinks', 'AlertService'];

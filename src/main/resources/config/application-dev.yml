@@ -18,26 +18,29 @@ spring:
         livereload:
             enabled: false # we use gulp + BrowserSync for livereload
     datasource:
-        url: jdbc:h2:mem:samplehazelcast;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:jhipsterhazelcastsampleapplication;DB_CLOSE_DELAY=-1
         name:
-        username: sampleHazelcast
+        username: jhipsterHazelcastSampleApplication
         password:
     h2:
         console:
             enabled: false
     jpa:
-        database-platform: com.mycompany.myapp.domain.util.FixedH2Dialect
+        database-platform: io.github.jhipster.sample.domain.util.FixedH2Dialect
         database: H2
         show_sql: true
         properties:
             hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
-            hibernate.cache.region.factory_class: com.mycompany.myapp.config.hazelcast.HazelcastCacheRegionFactory
+            hibernate.cache.region.factory_class: io.github.jhipster.sample.config.hazelcast.HazelcastCacheRegionFactory
             hibernate.cache.use_minimal_puts: true
             hibernate.cache.hazelcast.use_lite_member: true
     mail:
         host: localhost
+        port: 25
+        username:
+        password:
     messages:
         cache-seconds: 1
     thymeleaf:
@@ -63,7 +66,7 @@ jhipster:
             # security key (this key should be unique for your application, and kept secret)
             key: f0186c13d2417f4fa9532017dc5e02300d6c232d
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: sampleHazelcast@localhost
+        from: jhipsterHazelcastSampleApplication@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         spark:
@@ -74,7 +77,7 @@ jhipster:
             enabled: false
             host: localhost
             port: 2003
-            prefix: sampleHazelcast
+            prefix: jhipsterHazelcastSampleApplication
         logs: # Reports Dropwizard metrics in the logs
             enabled: false
             reportFrequency: 60 # in seconds

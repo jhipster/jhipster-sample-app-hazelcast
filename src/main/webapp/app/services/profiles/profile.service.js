@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('ProfileService', ProfileService);
 
     ProfileService.$inject = ['$q', '$http'];

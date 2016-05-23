@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .config(localStorageConfig);
 
     localStorageConfig.$inject = ['$localStorageProvider'];

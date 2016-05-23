@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('Base64', Base64);
 
     function Base64 () {

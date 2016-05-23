@@ -18,7 +18,7 @@ spring:
         livereload:
             enabled: false
     datasource:
-        url: jdbc:mysql://localhost:3306/sampleHazelcast?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/jhipsterHazelcastSampleApplication?useUnicode=true&characterEncoding=utf8&useSSL=false
         name:
         username: root
         password:
@@ -29,14 +29,14 @@ spring:
                 prepStmtCacheSqlLimit: 2048
                 useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         database: MYSQL
         show_sql: false
         properties:
             hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
-            hibernate.cache.region.factory_class: com.mycompany.myapp.config.hazelcast.HazelcastCacheRegionFactory
+            hibernate.cache.region.factory_class: io.github.jhipster.sample.config.hazelcast.HazelcastCacheRegionFactory
             hibernate.cache.use_minimal_puts: true
             hibernate.cache.hazelcast.use_lite_member: true
     mail:
@@ -74,7 +74,7 @@ jhipster:
             # security key (this key should be unique for your application, and kept secret)
             key: f0186c13d2417f4fa9532017dc5e02300d6c232d
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: sampleHazelcast@localhost
+        from: jhipsterHazelcastSampleApplication@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         spark:
@@ -85,7 +85,7 @@ jhipster:
             enabled: false
             host: localhost
             port: 2003
-            prefix: sampleHazelcast
+            prefix: jhipsterHazelcastSampleApplication
         logs: # Reports Dropwizard metrics in the logs
             enabled: false
             reportFrequency: 60 # in seconds

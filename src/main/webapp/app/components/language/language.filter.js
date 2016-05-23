@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .filter('findLanguageFromKey', findLanguageFromKey);
 
     function findLanguageFromKey() {

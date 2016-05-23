@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .controller('OperationDialogController', OperationDialogController);
 
     OperationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Operation', 'BankAccount', 'Label'];
@@ -18,7 +18,7 @@
         });
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleHazelcastApp:operationUpdate', result);
+            $scope.$emit('jhipsterHazelcastSampleApplicationApp:operationUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         };

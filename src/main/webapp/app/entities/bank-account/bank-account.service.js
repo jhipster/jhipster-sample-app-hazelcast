@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('BankAccount', BankAccount);
 
     BankAccount.$inject = ['$resource'];

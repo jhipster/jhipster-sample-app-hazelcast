@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('sampleHazelcastApp')
+    angular.module('jhipsterHazelcastSampleApplicationApp')
         .controller('HealthModalController', HealthModalController);
 
     HealthModalController.$inject = ['$uibModalInstance', 'currentHealth', 'baseName', 'subSystemName'];

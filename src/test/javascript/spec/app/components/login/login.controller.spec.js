@@ -2,7 +2,7 @@
 
 describe('Controller Tests', function () {
 
-    beforeEach(module('sampleHazelcastApp'));
+    beforeEach(module('jhipsterHazelcastSampleApplicationApp'));
 
     describe('LoginController', function () {
         var $scope, authService;

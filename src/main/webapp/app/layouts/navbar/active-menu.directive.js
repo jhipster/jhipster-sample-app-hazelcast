@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .directive('activeMenu', activeMenu);
 
     function activeMenu($translate, $locale, tmhDynamicLocale) {

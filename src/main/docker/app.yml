@@ -1,15 +1,15 @@
 version: '2'
 services:
-    samplehazelcast-app:
-        image: samplehazelcast
+    jhipsterhazelcastsampleapplication-app:
+        image: jhipsterhazelcastsampleapplication
         external_links:
-            - samplehazelcast-mysql:mysql
+            - jhipsterhazelcastsampleapplication-mysql:mysql
         environment:
             - SPRING_PROFILES_ACTIVE=prod
-            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/samplehazelcast?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/jhipsterhazelcastsampleapplication?useUnicode=true&characterEncoding=utf8&useSSL=false
         ports:
             - 8080:8080
-    samplehazelcast-mysql:
+    jhipsterhazelcastsampleapplication-mysql:
         extends:
             file: mysql.yml
-            service: samplehazelcast-mysql
+            service: jhipsterhazelcastsampleapplication-mysql

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .directive('hasAnyAuthority', hasAnyAuthority);
 
     function hasAnyAuthority(Principal) {

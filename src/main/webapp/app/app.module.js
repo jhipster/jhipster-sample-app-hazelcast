@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp', [
+        .module('jhipsterHazelcastSampleApplicationApp', [
             'ngStorage', 
             'tmh.dynamicLocale',
             'pascalprecht.translate', 

@@ -1,5 +1,5 @@
 {
-    "sampleHazelcastApp": {
+    "jhipsterHazelcastSampleApplicationApp": {
         "label" : {
             "home": {
                 "title": "Labels",

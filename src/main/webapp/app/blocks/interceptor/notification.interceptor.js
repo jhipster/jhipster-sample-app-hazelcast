@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .factory('notificationInterceptor', notificationInterceptor);
 
     notificationInterceptor.$inject = ['$q', 'AlertService'];
@@ -15,9 +15,9 @@
         return service;
 
         function response (response) {
-            var alertKey = response.headers('X-sampleHazelcastApp-alert');
+            var alertKey = response.headers('X-jhipsterHazelcastSampleApplicationApp-alert');
             if (angular.isString(alertKey)) {
-                AlertService.success(alertKey, { param : response.headers('X-sampleHazelcastApp-params')});
+                AlertService.success(alertKey, { param : response.headers('X-jhipsterHazelcastSampleApplicationApp-params')});
             }
             return response;
         }

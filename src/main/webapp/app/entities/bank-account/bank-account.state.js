@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleHazelcastApp')
+        .module('jhipsterHazelcastSampleApplicationApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/bank-account',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'sampleHazelcastApp.bankAccount.home.title'
+                pageTitle: 'jhipsterHazelcastSampleApplicationApp.bankAccount.home.title'
             },
             views: {
                 'content@': {
@@ -36,7 +36,7 @@
             url: '/bank-account/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'sampleHazelcastApp.bankAccount.detail.title'
+                pageTitle: 'jhipsterHazelcastSampleApplicationApp.bankAccount.detail.title'
             },
             views: {
                 'content@': {

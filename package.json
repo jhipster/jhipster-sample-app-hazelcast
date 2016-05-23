@@ -1,7 +1,7 @@
 {
-  "name": "sample-hazelcast",
+  "name": "jhipster-hazelcast-sample-application",
   "version": "0.0.0",
-  "description": "Description for sampleHazelcast",
+  "description": "Description for jhipsterHazelcastSampleApplication",
   "private": true,
   "cacheDirectories": [
     "node_modules",
