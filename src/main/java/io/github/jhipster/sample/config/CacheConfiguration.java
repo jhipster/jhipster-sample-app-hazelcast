@@ -138,6 +138,8 @@ public class CacheConfiguration {
 
     /**
      * Use by Spring Security, to get events from Hazelcast.
+     *
+     * @return the session registry
      */
     @Bean
     public SessionRegistry sessionRegistry() {
