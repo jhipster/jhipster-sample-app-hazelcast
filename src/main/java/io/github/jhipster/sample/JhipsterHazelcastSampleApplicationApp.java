@@ -73,5 +73,4 @@ public class JhipsterHazelcastSampleApplicationApp {
             env.getProperty("server.port"));
 
     }
-
 }
