@@ -28,6 +28,7 @@
     "rememberMeKey": "f0186c13d2417f4fa9532017dc5e02300d6c232d",
     "useSass": false,
     "jhiPrefix": "jhi",
-    "messageBroker": false
+    "messageBroker": false,
+    "serviceDiscoveryType": false
   }
 }
