@@ -124,18 +124,8 @@ public class JHipsterProperties {
     }
 
     public static class Cache {
-
-        private int timeToLiveSeconds = 3600;
         private final Hazelcast hazelcast = new Hazelcast();
 
-
-        public int getTimeToLiveSeconds() {
-            return timeToLiveSeconds;
-        }
-
-        public void setTimeToLiveSeconds(int timeToLiveSeconds) {
-            this.timeToLiveSeconds = timeToLiveSeconds;
-        }
 
         public Hazelcast getHazelcast() {
             return hazelcast;
@@ -143,7 +133,17 @@ public class JHipsterProperties {
 
         public static class Hazelcast {
 
+            private int timeToLiveSeconds = 3600;
+
             private int backupCount = 1;
+
+            public int getTimeToLiveSeconds() {
+                return timeToLiveSeconds;
+            }
+
+            public void setTimeToLiveSeconds(int timeToLiveSeconds) {
+                this.timeToLiveSeconds = timeToLiveSeconds;
+            }
 
             public int getBackupCount() {
                 return backupCount;
