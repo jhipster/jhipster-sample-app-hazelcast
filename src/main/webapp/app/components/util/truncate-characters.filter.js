@@ -4,7 +4,7 @@
     angular
         .module('jhipsterHazelcastSampleApplicationApp')
         .filter('characters', characters);
-        
+
     function characters () {
         return charactersFilter;
 
