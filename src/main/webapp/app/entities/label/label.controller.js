@@ -5,9 +5,9 @@
         .module('jhipsterHazelcastSampleApplicationApp')
         .controller('LabelController', LabelController);
 
-    LabelController.$inject = ['$scope', '$state', 'Label'];
+    LabelController.$inject = ['Label'];
 
-    function LabelController ($scope, $state, Label) {
+    function LabelController(Label) {
         var vm = this;
 
         vm.labels = [];
