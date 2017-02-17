@@ -1,5 +1,6 @@
 package io.github.jhipster.sample;
 
+import io.github.jhipster.sample.config.ApplicationProperties;
 import io.github.jhipster.sample.config.DefaultProfileUtil;
 
 import io.github.jhipster.config.JHipsterConstants;
@@ -23,7 +24,7 @@ import java.util.Collection;
 
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class, HazelcastAutoConfiguration.class})
-@EnableConfigurationProperties(LiquibaseProperties.class)
+@EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 public class JhipsterHazelcastSampleApplicationApp {
 
     private static final Logger log = LoggerFactory.getLogger(JhipsterHazelcastSampleApplicationApp.class);
@@ -64,13 +65,19 @@ public class JhipsterHazelcastSampleApplicationApp {
         SpringApplication app = new SpringApplication(JhipsterHazelcastSampleApplicationApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
+        String protocol = "http";
+        if (env.getProperty("server.ssl.key-store") != null) {
+            protocol = "https";
+        }
         log.info("\n----------------------------------------------------------\n\t" +
                 "Application '{}' is running! Access URLs:\n\t" +
-                "Local: \t\thttp://localhost:{}\n\t" +
-                "External: \thttp://{}:{}\n\t" +
+                "Local: \t\t{}://localhost:{}\n\t" +
+                "External: \t{}://{}:{}\n\t" +
                 "Profile(s): \t{}\n----------------------------------------------------------",
             env.getProperty("spring.application.name"),
+            protocol,
             env.getProperty("server.port"),
+            protocol,
             InetAddress.getLocalHost().getHostAddress(),
             env.getProperty("server.port"),
             env.getActiveProfiles());
