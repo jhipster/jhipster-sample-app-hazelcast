@@ -43,6 +43,8 @@ spring:
             hibernate.hbm2ddl.auto: validate
     mail:
         host: localhost
+    messages:
+        basename: i18n/messages
     mvc:
         favicon:
             enabled: false
