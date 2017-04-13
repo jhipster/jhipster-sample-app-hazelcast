@@ -54,6 +54,13 @@ public class CacheConfiguration {
     @Bean
     public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
         log.debug("Configuring Hazelcast");
+
+        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("jhipsterHazelcastSampleApplication");
+        if (hazelCastInstance != null) {
+            log.debug("Hazelcast already initialized");
+            return hazelCastInstance;
+        }
+
         Config config = new Config();
         config.setInstanceName("jhipsterHazelcastSampleApplication");
         config.getNetworkConfig().setPort(5701);
