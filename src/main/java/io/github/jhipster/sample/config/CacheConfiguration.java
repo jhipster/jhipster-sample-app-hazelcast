@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
@@ -124,7 +125,7 @@ public class CacheConfiguration {
     }
 
     /**
-     * Use by Spring Security, to get events from Hazelcast.
+     * Used by Spring Security, to get events from Hazelcast.
      *
      * @return the session registry
      */
