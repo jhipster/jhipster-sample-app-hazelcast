@@ -28,7 +28,7 @@ public class BankAccountResource {
     private final Logger log = LoggerFactory.getLogger(BankAccountResource.class);
 
     private static final String ENTITY_NAME = "bankAccount";
-        
+
     private final BankAccountRepository bankAccountRepository;
 
     public BankAccountResource(BankAccountRepository bankAccountRepository) {
@@ -61,7 +61,7 @@ public class BankAccountResource {
      * @param bankAccount the bankAccount to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated bankAccount,
      * or with status 400 (Bad Request) if the bankAccount is not valid,
-     * or with status 500 (Internal Server Error) if the bankAccount couldnt be updated
+     * or with status 500 (Internal Server Error) if the bankAccount couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/bank-accounts")
@@ -86,8 +86,7 @@ public class BankAccountResource {
     @Timed
     public List<BankAccount> getAllBankAccounts() {
         log.debug("REST request to get all BankAccounts");
-        List<BankAccount> bankAccounts = bankAccountRepository.findAll();
-        return bankAccounts;
+        return bankAccountRepository.findAll();
     }
 
     /**
@@ -117,5 +116,4 @@ public class BankAccountResource {
         bankAccountRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 }
