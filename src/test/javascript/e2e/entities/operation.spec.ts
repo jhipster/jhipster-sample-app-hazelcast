@@ -18,14 +18,16 @@ describe('Operation e2e test', () => {
     it('should load Operations', () => {
         navBarPage.goToEntity('operation');
         operationComponentsPage = new OperationComponentsPage();
-        expect(operationComponentsPage.getTitle()).toMatch(/jhipsterHazelcastSampleApplicationApp.operation.home.title/);
+        expect(operationComponentsPage.getTitle())
+            .toMatch(/jhipsterHazelcastSampleApplicationApp.operation.home.title/);
 
     });
 
     it('should load create Operation dialog', () => {
         operationComponentsPage.clickOnCreateButton();
         operationDialogPage = new OperationDialogPage();
-        expect(operationDialogPage.getModalTitle()).toMatch(/jhipsterHazelcastSampleApplicationApp.operation.home.createOrEditLabel/);
+        expect(operationDialogPage.getModalTitle())
+            .toMatch(/jhipsterHazelcastSampleApplicationApp.operation.home.createOrEditLabel/);
         operationDialogPage.close();
     });
 

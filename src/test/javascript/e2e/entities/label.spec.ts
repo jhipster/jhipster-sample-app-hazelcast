@@ -18,14 +18,16 @@ describe('Label e2e test', () => {
     it('should load Labels', () => {
         navBarPage.goToEntity('label');
         labelComponentsPage = new LabelComponentsPage();
-        expect(labelComponentsPage.getTitle()).toMatch(/jhipsterHazelcastSampleApplicationApp.label.home.title/);
+        expect(labelComponentsPage.getTitle())
+            .toMatch(/jhipsterHazelcastSampleApplicationApp.label.home.title/);
 
     });
 
     it('should load create Label dialog', () => {
         labelComponentsPage.clickOnCreateButton();
         labelDialogPage = new LabelDialogPage();
-        expect(labelDialogPage.getModalTitle()).toMatch(/jhipsterHazelcastSampleApplicationApp.label.home.createOrEditLabel/);
+        expect(labelDialogPage.getModalTitle())
+            .toMatch(/jhipsterHazelcastSampleApplicationApp.label.home.createOrEditLabel/);
         labelDialogPage.close();
     });
 
