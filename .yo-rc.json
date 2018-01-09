@@ -5,7 +5,6 @@
     "packageFolder": "io/github/jhipster/sample",
     "authenticationType": "session",
     "hibernateCache": "hazelcast",
-    "clusteredHttpSession": "hazelcast",
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Memory",
