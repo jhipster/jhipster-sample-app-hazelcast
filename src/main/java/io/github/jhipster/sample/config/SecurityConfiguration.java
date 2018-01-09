@@ -16,7 +16,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -42,19 +41,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final RememberMeServices rememberMeServices;
 
-    private final SessionRegistry sessionRegistry;
-
     private final CorsFilter corsFilter;
 
     private final SecurityProblemSupport problemSupport;
 
     public SecurityConfiguration(AuthenticationManagerBuilder authenticationManagerBuilder, UserDetailsService userDetailsService,
-        JHipsterProperties jHipsterProperties, RememberMeServices rememberMeServices, SessionRegistry sessionRegistry,CorsFilter corsFilter, SecurityProblemSupport problemSupport) {
+        JHipsterProperties jHipsterProperties, RememberMeServices rememberMeServices,CorsFilter corsFilter, SecurityProblemSupport problemSupport) {
         this.authenticationManagerBuilder = authenticationManagerBuilder;
         this.userDetailsService = userDetailsService;
         this.jHipsterProperties = jHipsterProperties;
         this.rememberMeServices = rememberMeServices;
-        this.sessionRegistry = sessionRegistry;
         this.corsFilter = corsFilter;
         this.problemSupport = problemSupport;
     }
@@ -105,10 +101,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .sessionManagement()
-            .maximumSessions(32) // maximum number of concurrent sessions for one user
-            .sessionRegistry(sessionRegistry)
-            .and().and()
             .csrf()
             .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
         .and()
@@ -133,7 +125,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .logout()
             .logoutUrl("/api/logout")
             .logoutSuccessHandler(ajaxLogoutSuccessHandler())
-            .deleteCookies("hazelcast.sessionId")
             .permitAll()
         .and()
             .headers()

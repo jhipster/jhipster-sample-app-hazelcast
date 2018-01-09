@@ -16,8 +16,6 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
-import org.springframework.security.core.session.SessionRegistry;
-import org.springframework.security.core.session.SessionRegistryImpl;
 
 import javax.annotation.PreDestroy;
 
@@ -74,7 +72,6 @@ public class CacheConfiguration {
         // Full reference is available at: http://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
         config.setManagementCenterConfig(initializeDefaultManagementCenterConfig(jHipsterProperties));
         config.getMapConfigs().put("io.github.jhipster.sample.domain.*", initializeDomainMapConfig(jHipsterProperties));
-        config.getMapConfigs().put("clustered-http-sessions", initializeClusteredSession(jHipsterProperties));
         return Hazelcast.newHazelcastInstance(config);
     }
 
@@ -120,22 +117,5 @@ public class CacheConfiguration {
         MapConfig mapConfig = new MapConfig();
         mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getHazelcast().getTimeToLiveSeconds());
         return mapConfig;
-    }
-
-    private MapConfig initializeClusteredSession(JHipsterProperties jHipsterProperties) {
-        MapConfig mapConfig = new MapConfig();
-        mapConfig.setBackupCount(jHipsterProperties.getCache().getHazelcast().getBackupCount());
-        mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getHazelcast().getTimeToLiveSeconds());
-        return mapConfig;
-    }
-
-    /**
-     * Used by Spring Security, to get events from Hazelcast.
-     *
-     * @return the session registry
-     */
-    @Bean
-    public SessionRegistry sessionRegistry() {
-        return new SessionRegistryImpl();
     }
 }
