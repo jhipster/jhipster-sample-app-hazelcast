@@ -1,42 +1,11 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { registerLocaleData } from '@angular/common';
-import locale from '@angular/common/locales/en';
+import { NgModule } from '@angular/core';
 
-import {
-    JhipsterHazelcastSampleApplicationSharedLibsModule,
-    JhiLanguageHelper,
-    FindLanguageFromKeyPipe,
-    JhiAlertComponent,
-    JhiAlertErrorComponent
-} from './';
+import { JhipsterHazelcastSampleApplicationSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
-    imports: [
-        JhipsterHazelcastSampleApplicationSharedLibsModule
-    ],
-    declarations: [
-        FindLanguageFromKeyPipe,
-        JhiAlertComponent,
-        JhiAlertErrorComponent
-    ],
-    providers: [
-        JhiLanguageHelper,
-        Title,
-        {
-            provide: LOCALE_ID,
-            useValue: 'en'
-        },
-    ],
-    exports: [
-        JhipsterHazelcastSampleApplicationSharedLibsModule,
-        FindLanguageFromKeyPipe,
-        JhiAlertComponent,
-        JhiAlertErrorComponent
-    ]
+  imports: [JhipsterHazelcastSampleApplicationSharedLibsModule],
+  declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent],
+  providers: [],
+  exports: [JhipsterHazelcastSampleApplicationSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent]
 })
-export class JhipsterHazelcastSampleApplicationSharedCommonModule {
-    constructor() {
-        registerLocaleData(locale);
-    }
-}
+export class JhipsterHazelcastSampleApplicationSharedCommonModule {}
