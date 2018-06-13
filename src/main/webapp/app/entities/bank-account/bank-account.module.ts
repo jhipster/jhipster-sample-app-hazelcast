@@ -4,15 +4,13 @@ import { RouterModule } from '@angular/router';
 import { JhipsterHazelcastSampleApplicationSharedModule } from 'app/shared';
 import { JhipsterHazelcastSampleApplicationAdminModule } from 'app/admin/admin.module';
 import {
-    BankAccountService,
     BankAccountComponent,
     BankAccountDetailComponent,
     BankAccountUpdateComponent,
     BankAccountDeletePopupComponent,
     BankAccountDeleteDialogComponent,
     bankAccountRoute,
-    bankAccountPopupRoute,
-    BankAccountResolve
+    bankAccountPopupRoute
 } from './';
 
 const ENTITY_STATES = [...bankAccountRoute, ...bankAccountPopupRoute];
@@ -31,7 +29,6 @@ const ENTITY_STATES = [...bankAccountRoute, ...bankAccountPopupRoute];
         BankAccountDeletePopupComponent
     ],
     entryComponents: [BankAccountComponent, BankAccountUpdateComponent, BankAccountDeleteDialogComponent, BankAccountDeletePopupComponent],
-    providers: [BankAccountService, BankAccountResolve],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JhipsterHazelcastSampleApplicationBankAccountModule {}

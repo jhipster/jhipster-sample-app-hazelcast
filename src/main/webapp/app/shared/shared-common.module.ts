@@ -5,7 +5,6 @@ import { JhipsterHazelcastSampleApplicationSharedLibsModule, FindLanguageFromKey
 @NgModule({
     imports: [JhipsterHazelcastSampleApplicationSharedLibsModule],
     declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent],
-    providers: [],
     exports: [JhipsterHazelcastSampleApplicationSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent]
 })
 export class JhipsterHazelcastSampleApplicationSharedCommonModule {}
