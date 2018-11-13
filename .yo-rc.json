@@ -22,7 +22,7 @@
       "en"
     ],
     "serverPort": 8080,
-    "jhipsterVersion": "5.6.1",
+    "jhipsterVersion": "5.7.0",
     "enableSocialSignIn": false,
     "rememberMeKey": "f0186c13d2417f4fa9532017dc5e02300d6c232d",
     "useSass": false,
@@ -33,6 +33,7 @@
     "clientFramework": "angularX",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,
-    "reactive": false
+    "reactive": false,
+    "otherModules": []
   }
 }
