@@ -3,24 +3,24 @@ import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbDateMomentAdapter } from './util/datepicker-adapter';
 import {
-  JhipsterHazelcastSampleApplicationSharedLibsModule,
-  JhipsterHazelcastSampleApplicationSharedCommonModule,
-  JhiLoginModalComponent,
-  HasAnyAuthorityDirective
+    JhipsterHazelcastSampleApplicationSharedLibsModule,
+    JhipsterHazelcastSampleApplicationSharedCommonModule,
+    JhiLoginModalComponent,
+    HasAnyAuthorityDirective
 } from './';
 
 @NgModule({
-  imports: [JhipsterHazelcastSampleApplicationSharedLibsModule, JhipsterHazelcastSampleApplicationSharedCommonModule],
-  declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
-  providers: [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }],
-  entryComponents: [JhiLoginModalComponent],
-  exports: [JhipsterHazelcastSampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    imports: [JhipsterHazelcastSampleApplicationSharedLibsModule, JhipsterHazelcastSampleApplicationSharedCommonModule],
+    declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
+    providers: [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }],
+    entryComponents: [JhiLoginModalComponent],
+    exports: [JhipsterHazelcastSampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JhipsterHazelcastSampleApplicationSharedModule {
-  static forRoot() {
-    return {
-      ngModule: JhipsterHazelcastSampleApplicationSharedModule
-    };
-  }
+    static forRoot() {
+        return {
+            ngModule: JhipsterHazelcastSampleApplicationSharedModule
+        };
+    }
 }
