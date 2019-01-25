@@ -38,8 +38,7 @@ public class CacheConfiguration {
     @Bean
     public CacheManager cacheManager(HazelcastInstance hazelcastInstance) {
         log.debug("Starting HazelcastCacheManager");
-        CacheManager cacheManager = new com.hazelcast.spring.cache.HazelcastCacheManager(hazelcastInstance);
-        return cacheManager;
+        return new com.hazelcast.spring.cache.HazelcastCacheManager(hazelcastInstance);
     }
 
     @Bean

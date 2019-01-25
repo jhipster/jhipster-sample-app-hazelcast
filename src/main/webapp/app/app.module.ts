@@ -23,7 +23,6 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
 @NgModule({
     imports: [
         BrowserModule,
-        JhipsterHazelcastSampleApplicationAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
@@ -37,7 +36,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         JhipsterHazelcastSampleApplicationHomeModule,
         JhipsterHazelcastSampleApplicationAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        JhipsterHazelcastSampleApplicationEntityModule
+        JhipsterHazelcastSampleApplicationEntityModule,
+        JhipsterHazelcastSampleApplicationAppRoutingModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [
