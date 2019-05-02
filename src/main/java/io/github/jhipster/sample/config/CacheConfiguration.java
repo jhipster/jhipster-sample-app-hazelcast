@@ -13,13 +13,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.core.env.Environment;
-
-import javax.annotation.PreDestroy;
+import org.springframework.core.env.Profiles;
 
 @Configuration
 @EnableCaching
-public class CacheConfiguration {
+public class CacheConfiguration implements DisposableBean {
 
     private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
 
@@ -29,8 +29,8 @@ public class CacheConfiguration {
         this.env = env;
     }
 
-    @PreDestroy
-    public void destroy() {
+    @Override
+    public void destroy() throws Exception {
         log.info("Closing Cache Manager");
         Hazelcast.shutdownAll();
     }
@@ -55,7 +55,7 @@ public class CacheConfiguration {
         config.getNetworkConfig().setPortAutoIncrement(true);
 
         // In development, remove multicast auto-configuration
-        if (env.acceptsProfiles(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)) {
+        if (env.acceptsProfiles(Profiles.of(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT))) {
             System.setProperty("hazelcast.local.localAddress", "127.0.0.1");
 
             config.getNetworkConfig().getJoin().getAwsConfig().setEnabled(false);

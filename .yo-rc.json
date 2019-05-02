@@ -22,10 +22,10 @@
       "en"
     ],
     "serverPort": 8080,
-    "jhipsterVersion": "5.8.2",
+    "jhipsterVersion": "6.0.0",
     "enableSocialSignIn": false,
     "rememberMeKey": "f0186c13d2417f4fa9532017dc5e02300d6c232d",
-    "useSass": false,
+    "useSass": true,
     "jhiPrefix": "jhi",
     "messageBroker": false,
     "serviceDiscoveryType": false,
@@ -36,6 +36,7 @@
     "reactive": false,
     "otherModules": [],
     "entitySuffix": "",
-    "dtoSuffix": "DTO"
+    "dtoSuffix": "DTO",
+    "clientTheme": "none"
   }
 }
