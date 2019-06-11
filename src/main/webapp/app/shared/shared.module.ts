@@ -1,13 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {
-  JhipsterHazelcastSampleApplicationSharedLibsModule,
-  JhipsterHazelcastSampleApplicationSharedCommonModule,
-  JhiLoginModalComponent,
-  HasAnyAuthorityDirective
-} from './';
+import { JhipsterHazelcastSampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
 
 @NgModule({
-  imports: [JhipsterHazelcastSampleApplicationSharedLibsModule, JhipsterHazelcastSampleApplicationSharedCommonModule],
+  imports: [JhipsterHazelcastSampleApplicationSharedCommonModule],
   declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [JhiLoginModalComponent],
   exports: [JhipsterHazelcastSampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
