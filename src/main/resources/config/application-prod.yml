@@ -118,7 +118,6 @@ jhipster:
       # security key (this key should be unique for your application, and kept secret)
       key: f0186c13d2417f4fa9532017dc5e02300d6c232d
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    from: jhipsterHazelcastSampleApplication@localhost
     base-url: http://my-server-url-to-change # Modify according to your server's URL
   metrics:
     logs: # Reports metrics in the logs
