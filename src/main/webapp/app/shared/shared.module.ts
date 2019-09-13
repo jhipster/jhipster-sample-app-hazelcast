@@ -1,17 +1,22 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { JhipsterHazelcastSampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
+import { NgModule } from '@angular/core';
+import { JhipsterHazelcastSampleApplicationSharedLibsModule } from './shared-libs.module';
+import { FindLanguageFromKeyPipe } from './language/find-language-from-key.pipe';
+import { JhiAlertComponent } from './alert/alert.component';
+import { JhiAlertErrorComponent } from './alert/alert-error.component';
+import { JhiLoginModalComponent } from './login/login.component';
+import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
-  imports: [JhipsterHazelcastSampleApplicationSharedCommonModule],
-  declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
+  imports: [JhipsterHazelcastSampleApplicationSharedLibsModule],
+  declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [JhiLoginModalComponent],
-  exports: [JhipsterHazelcastSampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  exports: [
+    JhipsterHazelcastSampleApplicationSharedLibsModule,
+    FindLanguageFromKeyPipe,
+    JhiAlertComponent,
+    JhiAlertErrorComponent,
+    JhiLoginModalComponent,
+    HasAnyAuthorityDirective
+  ]
 })
-export class JhipsterHazelcastSampleApplicationSharedModule {
-  static forRoot() {
-    return {
-      ngModule: JhipsterHazelcastSampleApplicationSharedModule
-    };
-  }
-}
+export class JhipsterHazelcastSampleApplicationSharedModule {}
