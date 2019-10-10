@@ -113,4 +113,5 @@ public class CacheConfiguration implements DisposableBean {
         mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getHazelcast().getTimeToLiveSeconds());
         return mapConfig;
     }
+
 }
