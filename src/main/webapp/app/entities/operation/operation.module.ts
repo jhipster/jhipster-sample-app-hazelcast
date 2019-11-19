@@ -5,20 +5,12 @@ import { JhipsterHazelcastSampleApplicationSharedModule } from 'app/shared/share
 import { OperationComponent } from './operation.component';
 import { OperationDetailComponent } from './operation-detail.component';
 import { OperationUpdateComponent } from './operation-update.component';
-import { OperationDeletePopupComponent, OperationDeleteDialogComponent } from './operation-delete-dialog.component';
-import { operationRoute, operationPopupRoute } from './operation.route';
-
-const ENTITY_STATES = [...operationRoute, ...operationPopupRoute];
+import { OperationDeleteDialogComponent } from './operation-delete-dialog.component';
+import { operationRoute } from './operation.route';
 
 @NgModule({
-  imports: [JhipsterHazelcastSampleApplicationSharedModule, RouterModule.forChild(ENTITY_STATES)],
-  declarations: [
-    OperationComponent,
-    OperationDetailComponent,
-    OperationUpdateComponent,
-    OperationDeleteDialogComponent,
-    OperationDeletePopupComponent
-  ],
+  imports: [JhipsterHazelcastSampleApplicationSharedModule, RouterModule.forChild(operationRoute)],
+  declarations: [OperationComponent, OperationDetailComponent, OperationUpdateComponent, OperationDeleteDialogComponent],
   entryComponents: [OperationDeleteDialogComponent]
 })
 export class JhipsterHazelcastSampleApplicationOperationModule {}
