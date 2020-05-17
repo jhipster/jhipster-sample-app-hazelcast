@@ -11,6 +11,6 @@ import { labelRoute } from './label.route';
 @NgModule({
   imports: [JhipsterHazelcastSampleApplicationSharedModule, RouterModule.forChild(labelRoute)],
   declarations: [LabelComponent, LabelDetailComponent, LabelUpdateComponent, LabelDeleteDialogComponent],
-  entryComponents: [LabelDeleteDialogComponent]
+  entryComponents: [LabelDeleteDialogComponent],
 })
 export class JhipsterHazelcastSampleApplicationLabelModule {}
