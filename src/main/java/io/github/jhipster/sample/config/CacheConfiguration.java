@@ -67,15 +67,14 @@ public class CacheConfiguration {
             config.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
             config.getNetworkConfig().getJoin().getTcpIpConfig().setEnabled(false);
         }
-        config.getMapConfigs().put("default", initializeDefaultMapConfig(jHipsterProperties));
-
         config.setManagementCenterConfig(new ManagementCenterConfig());
-        config.getMapConfigs().put("io.github.jhipster.sample.domain.*", initializeDomainMapConfig(jHipsterProperties));
+        config.addMapConfig(initializeDefaultMapConfig(jHipsterProperties));
+        config.addMapConfig(initializeDomainMapConfig(jHipsterProperties));
         return Hazelcast.newHazelcastInstance(config);
     }
 
     private MapConfig initializeDefaultMapConfig(JHipsterProperties jHipsterProperties) {
-        MapConfig mapConfig = new MapConfig();
+        MapConfig mapConfig = new MapConfig("default");
 
         /*
         Number of backups. If 1 is set as the backup-count for example,
@@ -105,7 +104,7 @@ public class CacheConfiguration {
     }
 
     private MapConfig initializeDomainMapConfig(JHipsterProperties jHipsterProperties) {
-        MapConfig mapConfig = new MapConfig();
+        MapConfig mapConfig = new MapConfig("io.github.jhipster.sample.domain.*");
         mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getHazelcast().getTimeToLiveSeconds());
         return mapConfig;
     }
