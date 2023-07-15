@@ -1,22 +1,22 @@
 import { ILabel, NewLabel } from './label.model';
 
 export const sampleWithRequiredData: ILabel = {
-  id: 94955,
-  label: 'haptic Sports Micronesia',
+  id: 31114,
+  label: 'haptic Pizza Borders',
 };
 
 export const sampleWithPartialData: ILabel = {
-  id: 56378,
-  label: 'Hawaii',
+  id: 18474,
+  label: 'Kareem',
 };
 
 export const sampleWithFullData: ILabel = {
-  id: 54149,
-  label: 'Steel SSL Diesel',
+  id: 1307,
+  label: 'indigo Bedfordshire',
 };
 
 export const sampleWithNewData: NewLabel = {
-  label: 'payment',
+  label: 'Music man',
   id: null,
 };
 
