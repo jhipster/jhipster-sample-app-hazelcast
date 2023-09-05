@@ -8,14 +8,14 @@ import SharedModule from 'app/shared/shared.module';
 import { SortDirective, SortByDirective } from 'app/shared/sort';
 import { DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe } from 'app/shared/date';
 import { FormsModule } from '@angular/forms';
-import { IOperation } from '../operation.model';
 
 import { ITEMS_PER_PAGE } from 'app/config/pagination.constants';
 import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/config/navigation.constants';
-import { EntityArrayResponseType, OperationService } from '../service/operation.service';
-import { OperationDeleteDialogComponent } from '../delete/operation-delete-dialog.component';
 import { ParseLinks } from 'app/core/util/parse-links.service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { EntityArrayResponseType, OperationService } from '../service/operation.service';
+import { OperationDeleteDialogComponent } from '../delete/operation-delete-dialog.component';
+import { IOperation } from '../operation.model';
 
 @Component({
   standalone: true,
@@ -51,7 +51,7 @@ export class OperationComponent implements OnInit {
     protected activatedRoute: ActivatedRoute,
     public router: Router,
     protected parseLinks: ParseLinks,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
   ) {}
 
   reset(): void {
@@ -78,7 +78,7 @@ export class OperationComponent implements OnInit {
     modalRef.closed
       .pipe(
         filter(reason => reason === ITEM_DELETED_EVENT),
-        switchMap(() => this.loadFromBackendWithRouteInformations())
+        switchMap(() => this.loadFromBackendWithRouteInformations()),
       )
       .subscribe({
         next: (res: EntityArrayResponseType) => {
@@ -106,7 +106,7 @@ export class OperationComponent implements OnInit {
   protected loadFromBackendWithRouteInformations(): Observable<EntityArrayResponseType> {
     return combineLatest([this.activatedRoute.queryParamMap, this.activatedRoute.data]).pipe(
       tap(([params, data]) => this.fillComponentAttributeFromRoute(params, data)),
-      switchMap(() => this.queryBackend(this.page, this.predicate, this.ascending))
+      switchMap(() => this.queryBackend(this.page, this.predicate, this.ascending)),
     );
   }
 

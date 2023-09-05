@@ -2,21 +2,21 @@ import { ILabel, NewLabel } from './label.model';
 
 export const sampleWithRequiredData: ILabel = {
   id: 31114,
-  label: 'haptic Pizza Borders',
+  label: 'since archaeology poorly',
 };
 
 export const sampleWithPartialData: ILabel = {
-  id: 18474,
-  label: 'Kareem',
+  id: 30191,
+  label: 'embrace like heighten',
 };
 
 export const sampleWithFullData: ILabel = {
-  id: 1307,
-  label: 'indigo Bedfordshire',
+  id: 17794,
+  label: 'fooey jot whimper',
 };
 
 export const sampleWithNewData: NewLabel = {
-  label: 'Music man',
+  label: 'outrageous so rabbi',
   id: null,
 };
 

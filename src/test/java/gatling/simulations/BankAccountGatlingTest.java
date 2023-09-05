@@ -1,11 +1,9 @@
 package gatling.simulations;
 
 import static io.gatling.javaapi.core.CoreDsl.StringBody;
-import static io.gatling.javaapi.core.CoreDsl.css;
 import static io.gatling.javaapi.core.CoreDsl.exec;
 import static io.gatling.javaapi.core.CoreDsl.rampUsers;
 import static io.gatling.javaapi.core.CoreDsl.scenario;
-import static io.gatling.javaapi.http.HttpDsl.header;
 import static io.gatling.javaapi.http.HttpDsl.headerRegex;
 import static io.gatling.javaapi.http.HttpDsl.http;
 import static io.gatling.javaapi.http.HttpDsl.status;

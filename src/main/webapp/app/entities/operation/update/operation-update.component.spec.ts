@@ -6,13 +6,13 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, Subject, from } from 'rxjs';
 
-import { OperationFormService } from './operation-form.service';
-import { OperationService } from '../service/operation.service';
-import { IOperation } from '../operation.model';
 import { IBankAccount } from 'app/entities/bank-account/bank-account.model';
 import { BankAccountService } from 'app/entities/bank-account/service/bank-account.service';
 import { ILabel } from 'app/entities/label/label.model';
 import { LabelService } from 'app/entities/label/service/label.service';
+import { IOperation } from '../operation.model';
+import { OperationService } from '../service/operation.service';
+import { OperationFormService } from './operation-form.service';
 
 import { OperationUpdateComponent } from './operation-update.component';
 
@@ -54,10 +54,10 @@ describe('Operation Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call BankAccount query and add missing value', () => {
       const operation: IOperation = { id: 456 };
-      const bankAccount: IBankAccount = { id: 30200 };
+      const bankAccount: IBankAccount = { id: 5228 };
       operation.bankAccount = bankAccount;
 
-      const bankAccountCollection: IBankAccount[] = [{ id: 10781 }];
+      const bankAccountCollection: IBankAccount[] = [{ id: 12994 }];
       jest.spyOn(bankAccountService, 'query').mockReturnValue(of(new HttpResponse({ body: bankAccountCollection })));
       const additionalBankAccounts = [bankAccount];
       const expectedCollection: IBankAccount[] = [...additionalBankAccounts, ...bankAccountCollection];
@@ -69,17 +69,17 @@ describe('Operation Management Update Component', () => {
       expect(bankAccountService.query).toHaveBeenCalled();
       expect(bankAccountService.addBankAccountToCollectionIfMissing).toHaveBeenCalledWith(
         bankAccountCollection,
-        ...additionalBankAccounts.map(expect.objectContaining)
+        ...additionalBankAccounts.map(expect.objectContaining),
       );
       expect(comp.bankAccountsSharedCollection).toEqual(expectedCollection);
     });
 
     it('Should call Label query and add missing value', () => {
       const operation: IOperation = { id: 456 };
-      const labels: ILabel[] = [{ id: 20359 }];
+      const labels: ILabel[] = [{ id: 15345 }];
       operation.labels = labels;
 
-      const labelCollection: ILabel[] = [{ id: 19269 }];
+      const labelCollection: ILabel[] = [{ id: 5204 }];
       jest.spyOn(labelService, 'query').mockReturnValue(of(new HttpResponse({ body: labelCollection })));
       const additionalLabels = [...labels];
       const expectedCollection: ILabel[] = [...additionalLabels, ...labelCollection];
@@ -91,16 +91,16 @@ describe('Operation Management Update Component', () => {
       expect(labelService.query).toHaveBeenCalled();
       expect(labelService.addLabelToCollectionIfMissing).toHaveBeenCalledWith(
         labelCollection,
-        ...additionalLabels.map(expect.objectContaining)
+        ...additionalLabels.map(expect.objectContaining),
       );
       expect(comp.labelsSharedCollection).toEqual(expectedCollection);
     });
 
     it('Should update editForm', () => {
       const operation: IOperation = { id: 456 };
-      const bankAccount: IBankAccount = { id: 16007 };
+      const bankAccount: IBankAccount = { id: 15996 };
       operation.bankAccount = bankAccount;
-      const label: ILabel = { id: 15249 };
+      const label: ILabel = { id: 5164 };
       operation.labels = [label];
 
       activatedRoute.data = of({ operation });

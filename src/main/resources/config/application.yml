@@ -111,6 +111,7 @@ spring:
     open-in-view: false
     properties:
       hibernate.jdbc.time_zone: UTC
+      hibernate.timezone.default_storage: NORMALIZE
       hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
       hibernate.id.new_generator_mappings: true
       hibernate.connection.provider_disables_autocommit: true
@@ -190,8 +191,8 @@ jhipster:
   mail:
     from: jhipsterHazelcastSampleApplication@localhost
   api-docs:
-    default-include-pattern: ${server.servlet.context-path:}/api/**
-    management-include-pattern: ${server.servlet.context-path:}/management/**
+    default-include-pattern: /api/**
+    management-include-pattern: /management/**
     title: Jhipster Hazelcast Sample Application API
     description: Jhipster Hazelcast Sample Application API documentation
     version: 0.0.1
