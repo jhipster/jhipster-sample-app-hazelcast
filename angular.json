@@ -76,15 +76,15 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "jhipster-hazelcast-sample-application:build:development",
+            "buildTarget": "jhipster-hazelcast-sample-application:build:development",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "jhipster-hazelcast-sample-application:build:production"
+              "buildTarget": "jhipster-hazelcast-sample-application:build:production"
             },
             "development": {
-              "browserTarget": "jhipster-hazelcast-sample-application:build:development"
+              "buildTarget": "jhipster-hazelcast-sample-application:build:development"
             }
           },
           "defaultConfiguration": "development"
