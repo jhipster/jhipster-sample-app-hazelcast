@@ -25,7 +25,7 @@
     "entitySuffix": "",
     "hibernateCache": "hazelcast",
     "jhiPrefix": "jhi",
-    "jhipsterVersion": "8.1.0",
+    "jhipsterVersion": "8.2.1",
     "languages": ["en"],
     "messageBroker": false,
     "nativeLanguage": "en",
