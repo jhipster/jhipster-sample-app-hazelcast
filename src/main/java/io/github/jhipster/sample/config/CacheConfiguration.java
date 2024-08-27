@@ -26,7 +26,7 @@ public class CacheConfiguration {
     private GitProperties gitProperties;
     private BuildProperties buildProperties;
 
-    private static final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CacheConfiguration.class);
 
     private final Environment env;
 
@@ -36,22 +36,22 @@ public class CacheConfiguration {
 
     @PreDestroy
     public void destroy() {
-        log.info("Closing Cache Manager");
+        LOG.info("Closing Cache Manager");
         Hazelcast.shutdownAll();
     }
 
     @Bean
     public CacheManager cacheManager(HazelcastInstance hazelcastInstance) {
-        log.debug("Starting HazelcastCacheManager");
+        LOG.debug("Starting HazelcastCacheManager");
         return new com.hazelcast.spring.cache.HazelcastCacheManager(hazelcastInstance);
     }
 
     @Bean
     public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
-        log.debug("Configuring Hazelcast");
+        LOG.debug("Configuring Hazelcast");
         HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("jhipsterHazelcastSampleApplication");
         if (hazelCastInstance != null) {
-            log.debug("Hazelcast already initialized");
+            LOG.debug("Hazelcast already initialized");
             return hazelCastInstance;
         }
         Config config = new Config();
