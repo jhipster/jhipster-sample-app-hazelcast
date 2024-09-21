@@ -11,6 +11,7 @@
       "error": "Error"
     },
     "indicator": {
+      "binders": "Message broker",
       "hazelcast": "Hazelcast",
       "diskSpace": "Disk space",
       "mail": "Email",

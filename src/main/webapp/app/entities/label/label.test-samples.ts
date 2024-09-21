@@ -1,22 +1,22 @@
 import { ILabel, NewLabel } from './label.model';
 
 export const sampleWithRequiredData: ILabel = {
-  id: 31114,
-  label: 'since archaeology poorly',
+  id: 27047,
+  label: 'sauerkraut enrich',
 };
 
 export const sampleWithPartialData: ILabel = {
-  id: 30191,
-  label: 'embrace like heighten',
+  id: 8948,
+  label: 'hyphenation manner mild',
 };
 
 export const sampleWithFullData: ILabel = {
-  id: 17794,
-  label: 'fooey jot whimper',
+  id: 22795,
+  label: 'though bleakly',
 };
 
 export const sampleWithNewData: NewLabel = {
-  label: 'outrageous so rabbi',
+  label: 'relative',
   id: null,
 };
 
