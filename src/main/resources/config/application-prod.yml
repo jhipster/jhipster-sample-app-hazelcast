@@ -34,8 +34,6 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/jhipsterHazelcastSampleApplication?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
-    username: root
-    password:
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -50,8 +48,6 @@ spring:
   mail:
     host: localhost
     port: 25
-    username:
-    password:
   thymeleaf:
     cache: true
 
@@ -96,10 +92,6 @@ jhipster:
     hazelcast: # Hazelcast distributed cache
       time-to-live-seconds: 3600
       backup-count: 1
-  security:
-    remember-me:
-      # security key (this key should be unique for your application, and kept secret)
-      key: f0186c13d2417f4fa9532017dc5e02300d6c232d
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://my-server-url-to-change # Modify according to your server's URL
   logging:
